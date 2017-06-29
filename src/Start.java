@@ -90,7 +90,6 @@ public class Start extends JApplet implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		System.out.print(e.getSource());
 		addTodo();
 	}
 	
@@ -119,7 +118,7 @@ public class Start extends JApplet implements ActionListener {
 		for (int i = 0; i < todos.size(); i++) {
 			String todo = todos.get(i);
 			int ii = i;
-//			System.out.println(todo);
+
 			JLabel label = new JLabel(todo);
 			label.setVisible(true);
 			label.setSize(300, labelHeight);
@@ -128,7 +127,6 @@ public class Start extends JApplet implements ActionListener {
 
 	            @Override
 	            public void mouseClicked(MouseEvent e) {
-	            	System.out.println(todo + " " + ii);
 	            	todos.remove(ii);
 	            	panel.viewTodos();
 	            }
