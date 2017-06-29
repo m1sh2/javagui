@@ -1,29 +1,37 @@
 import javax.swing.*;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
-import java.awt.GridLayout;
-import java.awt.Rectangle;
 import java.awt.event.*;
+
 import java.util.*;
-import java.lang.Object;
 
 public class Start extends JApplet implements ActionListener {
 	
-	private JFrame frame;
-	private JPanel todosPanel;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
 	private JButton todoAddButton;
 	private JTextField todoField;
 	private ArrayList<String> todos = new ArrayList<String>();
-	private RemoveElement removeEl = new RemoveElement();
 	private Start panel = this;
 
 	
 	// Public section
 	
 	public static void main(String[] args) {
-		
+		Start start = new Start();
+	    start.init();
+	    start.start();
+
+	    JFrame window = new JFrame("Java Todo List"); 
+	    window.setSize(640, 480);
+	    window.setContentPane(start);
+	    window.setVisible(true);
+	    window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 	}
 
 	public void init() {
